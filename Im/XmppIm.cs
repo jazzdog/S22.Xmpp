@@ -1365,7 +1365,10 @@ namespace S22.Xmpp.Im {
 		/// For details, refer to RFC 3921, Section 3. Session Establishment.
 		/// </remarks>
 		void EstablishSession() {
-			Iq ret = IqRequest(IqType.Set, Hostname, null,
+            //Iq ret = IqRequest(IqType.Set, Hostname+ "@858a43725889", null,
+            string theJid = Hostname + "@" + core.Jid.Domain;
+            //Iq ret = IqRequest(IqType.Set, Hostname, null,
+            Iq ret = IqRequest(IqType.Set, theJid, null,
 				Xml.Element("session", "urn:ietf:params:xml:ns:xmpp-session"));
 			if (ret.Type == IqType.Error)
 				throw Util.ExceptionFromError(ret, "Session establishment failed.");

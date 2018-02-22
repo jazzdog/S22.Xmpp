@@ -1018,8 +1018,9 @@ namespace S22.Xmpp.Core {
 					// Quit the task if it's been cancelled.
 					return;
 				} catch(Exception e) {
-					// FIXME: What should we do if an exception is thrown in one of the
-					// event handlers?
+                    // FIXME: What should we do if an exception is thrown in one of the
+                    // event handlers?
+                    return;
 				}
 			}
 		}

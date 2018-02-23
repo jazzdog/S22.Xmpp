@@ -1020,7 +1020,7 @@ namespace S22.Xmpp.Core {
 				} catch(Exception e) {
                     // FIXME: What should we do if an exception is thrown in one of the
                     // event handlers?
-                    return;
+                    Error.Raise(this, new ErrorEventArgs(e));
 				}
 			}
 		}
